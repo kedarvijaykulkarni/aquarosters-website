@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useRef, useState, FormEvent } from "react";
 import { Button } from "./Button";
-import { submitDesignPartnerApplication } from "@/lib/supabase/forms";
+import { TurnstileField } from "./forms/TurnstileField";
+import { submitDesignPartnerApplicationWithTurnstile } from "@/lib/forms/submit-public-form";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
 
 const fieldClasses =
   "w-full rounded-xl border border-border bg-white px-4 py-3 text-ink placeholder:text-muted/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean";
@@ -14,6 +16,29 @@ type Status = "idle" | "submitting" | "success" | "error";
 export function DesignPartnerForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [turnstileMessage, setTurnstileMessage] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [fieldsValid, setFieldsValid] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
+  function handleFormInput(event: FormEvent<HTMLFormElement>) {
+    setFieldsValid(event.currentTarget.checkValidity());
+  }
+
+  function handleTurnstileVerify(token: string) {
+    setTurnstileToken(token);
+    setTurnstileMessage(null);
+  }
+
+  function handleTurnstileExpire() {
+    setTurnstileToken(null);
+    setTurnstileMessage("Verification expired. Please complete it again.");
+  }
+
+  function handleTurnstileError() {
+    setTurnstileToken(null);
+    setTurnstileMessage("Verification failed to load. Please refresh and try again.");
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -48,23 +73,37 @@ export function DesignPartnerForm() {
       return;
     }
 
+    if (!turnstileToken) {
+      setStatus("error");
+      setErrorMessage("Please complete the verification challenge before submitting your application.");
+      return;
+    }
+
     setStatus("submitting");
     setErrorMessage(null);
 
-    const result = await submitDesignPartnerApplication({
-      name,
-      business_name: business,
-      email,
-      country: String(data.get("country") ?? "").trim() || undefined,
-      business_type: String(data.get("businessType") ?? "").trim() || undefined,
-      number_of_staff: String(data.get("staffCount") ?? "").trim() || undefined,
-      current_tools_used: String(data.get("currentTools") ?? "").trim() || undefined,
-      biggest_operational_problem: problem,
-    });
+    const result = await submitDesignPartnerApplicationWithTurnstile(
+      {
+        name,
+        business_name: business,
+        email,
+        country: String(data.get("country") ?? "").trim() || undefined,
+        business_type: String(data.get("businessType") ?? "").trim() || undefined,
+        number_of_staff: String(data.get("staffCount") ?? "").trim() || undefined,
+        current_tools_used: String(data.get("currentTools") ?? "").trim() || undefined,
+        biggest_operational_problem: problem,
+        company_website_confirm: String(data.get("company_website_confirm") ?? "").trim() || undefined,
+      },
+      turnstileToken
+    );
+
+    turnstileRef.current?.reset();
+    setTurnstileToken(null);
 
     if (result.ok) {
       setStatus("success");
       form.reset();
+      setFieldsValid(false);
     } else {
       setStatus("error");
       setErrorMessage("Sorry, we could not submit your application. Please try again.");
@@ -87,10 +126,19 @@ export function DesignPartnerForm() {
             {errorMessage}
           </p>
         )}
+        {turnstileMessage && (
+          <p className="mb-5 rounded-xl border border-warning/30 bg-warning/5 px-4 py-3 text-sm font-medium text-warning">
+            {turnstileMessage}
+          </p>
+        )}
       </div>
 
       {status !== "success" && (
-        <form onSubmit={handleSubmit} className="grid gap-5 rounded-2xl border border-border bg-white p-8 shadow-card">
+        <form
+          onSubmit={handleSubmit}
+          onInput={handleFormInput}
+          className="grid gap-5 rounded-2xl border border-border bg-white p-8 shadow-card"
+        >
           <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
             <label htmlFor="dp-company_website_confirm">Leave this field blank</label>
             <input
@@ -136,7 +184,20 @@ export function DesignPartnerForm() {
             <label htmlFor="dp-problem" className="mb-1.5 block text-sm font-semibold text-navy">Biggest operational problem</label>
             <textarea id="dp-problem" name="problem" rows={4} required minLength={10} maxLength={5000} className={fieldClasses} />
           </div>
-          <Button type="submit" variant="primary" className="w-full sm:w-fit" disabled={status === "submitting"}>
+
+          <TurnstileField
+            ref={turnstileRef}
+            onVerify={handleTurnstileVerify}
+            onExpire={handleTurnstileExpire}
+            onError={handleTurnstileError}
+          />
+
+          <Button
+            type="submit"
+            variant="primary"
+            className="w-full sm:w-fit"
+            disabled={status === "submitting" || !fieldsValid || !turnstileToken}
+          >
             {status === "submitting" ? "Submitting..." : "Apply as Design Partner"}
           </Button>
         </form>

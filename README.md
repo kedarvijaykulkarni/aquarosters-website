@@ -30,21 +30,33 @@ The static export is generated in `out/`.
 
 ## Supabase Forms Setup
 
-The Contact and Design Partner Program forms insert directly into Supabase
-from the browser (no API route). To run them locally:
+The Contact and Design Partner Program forms are protected by Cloudflare
+Turnstile and submit through a Supabase Edge Function (`submit-public-form`)
+rather than inserting into the database directly (no Next.js API route
+needed — the site stays a pure static export). To run them locally:
 
 1. Create `.env.local` (gitignored) with:
    ```
    NEXT_PUBLIC_SUPABASE_URL=https://kocqprhhqrrfirwpxbtn.supabase.co
    NEXT_PUBLIC_SUPABASE_ANON_KEY=<the project's publishable/anon key>
+   NEXT_PUBLIC_TURNSTILE_SITE_KEY=<a Cloudflare Turnstile site key>
    ```
-2. Apply the migration in `supabase/migrations/` (via `supabase db push` or
-   the Supabase SQL editor) to create the `contact_submissions` and
-   `design_partner_applications` tables.
-3. Run `npm run dev` and submit either form.
+2. Apply the migrations in `supabase/migrations/` (via `supabase db push` or
+   the Supabase SQL editor) to create the tables and lock down direct anon
+   inserts.
+3. Set the Edge Function secrets and deploy it:
+   ```bash
+   supabase secrets set TURNSTILE_SECRET_KEY=your_turnstile_secret_key
+   supabase secrets set ALLOWED_ORIGINS=http://localhost:3000,https://your-production-domain.com
+   supabase functions deploy submit-public-form --no-verify-jwt
+   ```
+4. Run `npm run dev` and submit either form.
+
+Unit tests for the form validation/request logic: `npm test`.
 
 Full setup, RLS verification, and manual test steps: see
-[`docs/SUPABASE_FORMS.md`](docs/SUPABASE_FORMS.md).
+[`docs/SUPABASE_FORMS.md`](docs/SUPABASE_FORMS.md) and
+[`docs/TESTING.md`](docs/TESTING.md).
 
 ## Suggested repository name
 

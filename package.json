@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build"
+    "export": "next build",
+    "test": "node --test supabase/functions/submit-public-form/*.test.ts lib/forms/*.test.ts"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^1.5.3",
     "@next/third-parties": "latest",
-    "@supabase/supabase-js": "^2.110.0",
     "next": "14.2.30",
     "react": "18.3.1",
     "react-dom": "18.3.1"
