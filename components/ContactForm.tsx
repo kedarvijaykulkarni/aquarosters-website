@@ -4,6 +4,7 @@ import { useRef, useState, FormEvent } from "react";
 import { Button } from "./Button";
 import { TurnstileField } from "./forms/TurnstileField";
 import { submitContactFormWithTurnstile } from "@/lib/forms/submit-public-form";
+import { event as trackGaEvent } from "@/lib/analytics/google-analytics";
 import type { TurnstileInstance } from "@marsidev/react-turnstile";
 
 const fieldClasses =
@@ -92,6 +93,7 @@ export function ContactForm() {
       setStatus("success");
       form.reset();
       setFieldsValid(false);
+      trackGaEvent("contact_form_submit_success", { form: "contact" });
     } else {
       setStatus("error");
       setErrorMessage("Sorry, we could not send your message. Please try again.");

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static, SEO-friendly marketing website for **AquaRosters** — the live operations agenda for dive centers and watersports schools. Next.js 14 App Router, fully statically exported (no server runtime in production). Brand name is **AquaRosters** everywhere — never the old singular product/domain name.
+Static, SEO-friendly marketing website for **AquaRosters** — the live operations agenda for dive centers and watersports schools. Next.js 16 App Router, fully statically exported (no server runtime in production). Brand name is **AquaRosters** everywhere — never the old singular product/domain name.
 
 ## Commands
 
@@ -13,7 +13,7 @@ npm install
 npm run dev     # dev server at http://localhost:3000
 npm run build   # static export to out/ (this is what CI runs)
 npm run start   # serve a production build (rarely needed; site is static)
-npm run lint    # next lint (ESLint, eslint-config-next)
+npm run lint    # eslint . (flat config, eslint-config-next) — `next lint` was removed in Next.js 16
 ```
 
 There is no test suite configured. `npm run export` is an alias for `npm run build` (kept for compatibility with older deploy scripts).

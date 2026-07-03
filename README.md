@@ -4,7 +4,7 @@ Static, SEO-friendly marketing website for **AquaRosters** — the live operatio
 
 ## What is included
 
-- Next.js 14 App Router
+- Next.js 16 App Router
 - Static export support via `output: 'export'`
 - SEO metadata, Open Graph image, JSON-LD, sitemap and robots
 - Homepage, detailed feature pages, solution pages, pricing, comparison, design partner, about, contact, legal and blog pages
@@ -57,6 +57,16 @@ Unit tests for the form validation/request logic: `npm test`.
 Full setup, RLS verification, and manual test steps: see
 [`docs/SUPABASE_FORMS.md`](docs/SUPABASE_FORMS.md) and
 [`docs/TESTING.md`](docs/TESTING.md).
+
+## Google Analytics
+
+Set this environment variable in production:
+
+```env
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+Google Analytics is disabled automatically during local development and localhost testing. See [`docs/GOOGLE_ANALYTICS.md`](docs/GOOGLE_ANALYTICS.md) for details.
 
 ## Suggested repository name
 

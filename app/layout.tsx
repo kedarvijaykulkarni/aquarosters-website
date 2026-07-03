@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./globals.css";
 import { inter, manrope } from "@/lib/fonts";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { brand } from "@/lib/content";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { GoogleAnalyticsPageView } from "@/components/analytics/GoogleAnalyticsPageView";
+import { CTAEventTracker } from "@/components/analytics/CTAEventTracker";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aquarosters.com";
 
@@ -45,6 +49,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <div id="main-content">{children}</div>
         <SiteFooter />
+        <Suspense fallback={null}>
+          <GoogleAnalyticsPageView />
+        </Suspense>
+        <CTAEventTracker />
+        <GoogleAnalytics />
       </body>
     </html>
   );

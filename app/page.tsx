@@ -75,8 +75,8 @@ export default function Home() {
                 ))}
               </ul>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Button href="/contact" variant="primary">Book a Demo</Button>
-                <Button href="/design-partners" variant="secondary">Join Design Partner Program</Button>
+                <Button href="/contact" variant="primary" data-ga-event="book_demo_click">Book a Demo</Button>
+                <Button href="/design-partners" variant="secondary" data-ga-event="join_design_partner_click">Join Design Partner Program</Button>
               </div>
               <p className="mt-6 text-sm text-muted">
                 Now accepting early design partners from dive and watersports operators.
@@ -263,7 +263,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Button href="/pricing" variant="secondary">See Pricing</Button>
+            <Button href="/pricing" variant="secondary" data-ga-event="see_pricing_click">See Pricing</Button>
           </div>
         </Container>
       </section>
@@ -294,7 +294,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <Button href="/design-partners" variant="primary" className="mt-10">
+          <Button href="/design-partners" variant="primary" className="mt-10" data-ga-event="join_design_partner_click">
             Join Design Partner Program
           </Button>
         </Container>
