@@ -19,14 +19,18 @@ export function Button({
   children,
   className = "",
   type,
+  disabled,
 }: {
   href?: string;
   variant?: Variant;
   children: ReactNode;
   className?: string;
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
+  disabled?: boolean;
 }) {
-  const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
+  const classes = `${baseClasses} ${variantClasses[variant]} ${className} ${
+    disabled ? "cursor-not-allowed opacity-60" : ""
+  }`;
 
   if (href) {
     return (
@@ -37,7 +41,7 @@ export function Button({
   }
 
   return (
-    <button type={type ?? "button"} className={classes}>
+    <button type={type ?? "button"} className={classes} disabled={disabled}>
       {children}
     </button>
   );

@@ -28,6 +28,24 @@ npm run build
 
 The static export is generated in `out/`.
 
+## Supabase Forms Setup
+
+The Contact and Design Partner Program forms insert directly into Supabase
+from the browser (no API route). To run them locally:
+
+1. Create `.env.local` (gitignored) with:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=https://kocqprhhqrrfirwpxbtn.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=<the project's publishable/anon key>
+   ```
+2. Apply the migration in `supabase/migrations/` (via `supabase db push` or
+   the Supabase SQL editor) to create the `contact_submissions` and
+   `design_partner_applications` tables.
+3. Run `npm run dev` and submit either form.
+
+Full setup, RLS verification, and manual test steps: see
+[`docs/SUPABASE_FORMS.md`](docs/SUPABASE_FORMS.md).
+
 ## Suggested repository name
 
 `aquarosters-website`
