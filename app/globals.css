@@ -14,6 +14,10 @@ h1, h2, h3, h4 {
   @apply font-display text-navy;
 }
 
+h1, h2 {
+  text-wrap: balance;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
