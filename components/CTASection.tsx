@@ -6,15 +6,19 @@ export function CTASection({
   description,
   primaryLabel = "Book a Demo",
   primaryHref = "/contact",
+  primaryGaEvent = "book_demo_click",
   secondaryLabel = "Join Design Partner Program",
   secondaryHref = "/design-partners",
+  secondaryGaEvent = "join_design_partner_click",
 }: {
   title: string;
   description?: string;
   primaryLabel?: string;
   primaryHref?: string;
+  primaryGaEvent?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
+  secondaryGaEvent?: string;
 }) {
   return (
     <section className="bg-navy py-20 md:py-28">
@@ -26,10 +30,15 @@ export function CTASection({
           <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">{description}</p>
         )}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href={primaryHref} variant="primary" className="bg-aqua text-navy hover:bg-teal hover:text-white">
+          <Button
+            href={primaryHref}
+            variant="primary"
+            className="bg-aqua text-navy hover:bg-teal hover:text-white"
+            data-ga-event={primaryGaEvent}
+          >
             {primaryLabel}
           </Button>
-          <Button href={secondaryHref} variant="outline-light">
+          <Button href={secondaryHref} variant="outline-light" data-ga-event={secondaryGaEvent}>
             {secondaryLabel}
           </Button>
         </div>

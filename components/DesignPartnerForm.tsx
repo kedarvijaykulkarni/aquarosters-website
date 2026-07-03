@@ -4,6 +4,7 @@ import { useRef, useState, FormEvent } from "react";
 import { Button } from "./Button";
 import { TurnstileField } from "./forms/TurnstileField";
 import { submitDesignPartnerApplicationWithTurnstile } from "@/lib/forms/submit-public-form";
+import { event as trackGaEvent } from "@/lib/analytics/google-analytics";
 import type { TurnstileInstance } from "@marsidev/react-turnstile";
 
 const fieldClasses =
@@ -104,6 +105,7 @@ export function DesignPartnerForm() {
       setStatus("success");
       form.reset();
       setFieldsValid(false);
+      trackGaEvent("design_partner_form_submit_success", { form: "design_partner" });
     } else {
       setStatus("error");
       setErrorMessage("Sorry, we could not submit your application. Please try again.");

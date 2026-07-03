@@ -20,6 +20,7 @@ export function Button({
   className = "",
   type,
   disabled,
+  "data-ga-event": gaEvent,
 }: {
   href?: string;
   variant?: Variant;
@@ -27,6 +28,7 @@ export function Button({
   className?: string;
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
   disabled?: boolean;
+  "data-ga-event"?: string;
 }) {
   const classes = `${baseClasses} ${variantClasses[variant]} ${className} ${
     disabled ? "cursor-not-allowed opacity-60" : ""
@@ -34,14 +36,14 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} data-ga-event={gaEvent}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button type={type ?? "button"} className={classes} disabled={disabled}>
+    <button type={type ?? "button"} className={classes} disabled={disabled} data-ga-event={gaEvent}>
       {children}
     </button>
   );
