@@ -12,8 +12,9 @@ export function generateStaticParams() {
   return featureModules.map((feature) => ({ slug: feature.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const feature = featureModules.find((item) => item.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const feature = featureModules.find((item) => item.slug === slug);
   if (!feature) return {};
   return {
     title: `${feature.title} — AquaRosters`,
@@ -21,8 +22,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function FeatureDetailPage({ params }: { params: { slug: string } }) {
-  const feature = featureModules.find((item) => item.slug === params.slug);
+export default async function FeatureDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const feature = featureModules.find((item) => item.slug === slug);
   if (!feature) notFound();
 
   const Mockup = mockupRegistry[feature.mockup] ?? mockupRegistry.ProductDashboardMockup;
