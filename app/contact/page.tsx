@@ -12,7 +12,7 @@ export default function ContactPage() {
     <main className="py-12 md:py-20">
       <Container className="max-w-2xl">
         <h1 className="font-display text-3xl font-bold text-navy md:text-5xl">
-          Let&apos;s talk about your operation.
+          Let’s talk about your operation.
         </h1>
         <p className="mt-4 text-lg text-muted">
           Whether you run a dive center, kitesurf school, surf school, or rental operation,

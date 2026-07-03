@@ -17,7 +17,7 @@ export function ContactForm() {
   if (submitted) {
     return (
       <div className="rounded-2xl border border-border bg-sky p-8 text-center">
-        <h3 className="font-display text-xl font-semibold text-navy">Thanks — we&apos;ll be in touch.</h3>
+        <h3 className="font-display text-xl font-semibold text-navy">Thanks — we’ll be in touch.</h3>
         <p className="mt-2 text-muted">Someone from the AquaRosters team will reply to your message shortly.</p>
       </div>
     );

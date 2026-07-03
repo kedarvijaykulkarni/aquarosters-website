@@ -20,7 +20,7 @@ const sections: { heading: string; body: string[] }[] = [
     heading: "2. Controller and processor roles",
     body: [
       "For website and prospect data (contact forms, demo requests, design partner applications), AquaRosters is the data controller.",
-      "For operational data entered into the platform by a dive center, watersports school, or rental operator (an \"Operator\") about its own staff and customers/participants, the Operator is the data controller and AquaRosters acts as a data processor, handling that data only on the Operator's instructions and under a data processing agreement. If you are a participant or customer of an Operator and want to exercise your data rights, please contact that Operator directly — we support them in responding to your request.",
+      "For operational data entered into the platform by a dive center, watersports school, or rental operator (an \"Operator\") about its own staff and customers/participants, the Operator is the data controller and AquaRosters acts as a data processor, handling that data only on the Operator’s instructions and under a data processing agreement. If you are a participant or customer of an Operator and want to exercise your data rights, please contact that Operator directly — we support them in responding to your request.",
     ],
   },
   {
@@ -90,7 +90,7 @@ const sections: { heading: string; body: string[] }[] = [
     ],
   },
   {
-    heading: "12. Children's privacy",
+    heading: "12. Children’s privacy",
     body: [
       "This website and the AquaRosters platform are intended for business use by adults operating activity centers. We do not knowingly collect personal data directly from children. Where an Operator records details of a minor (for example, a participant on a diving or kitesurf course), that record is entered and controlled by the Operator, not collected directly from the child by AquaRosters.",
     ],

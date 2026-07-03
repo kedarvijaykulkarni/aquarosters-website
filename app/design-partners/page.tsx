@@ -38,7 +38,7 @@ export default function DesignPartnersPage() {
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
           <div>
-            <SectionHeader align="left" title="Who it's for" />
+            <SectionHeader align="left" title="Who it’s for" />
             <ul className="flex flex-col gap-3">
               {whoItIsFor.map((item) => (
                 <li key={item} className="flex items-start gap-2 text-ink">
@@ -76,7 +76,7 @@ export default function DesignPartnersPage() {
           <div>
             <h2 className="font-display text-2xl font-bold text-navy">Apply as Design Partner</h2>
             <p className="mt-2 text-muted">
-              Tell us about your operation and the problem you&apos;re trying to solve.
+              Tell us about your operation and the problem you’re trying to solve.
             </p>
             <div className="mt-6">
               <DesignPartnerForm />

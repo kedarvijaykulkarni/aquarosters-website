@@ -57,7 +57,7 @@ const sections: { heading: string; body: string[] }[] = [
   {
     heading: "8. Acceptable use",
     body: [
-      "You agree not to: use the Service for unlawful purposes; attempt to gain unauthorized access to the Service or to other accounts; interfere with or disrupt the Service's operation; misuse participant or customer data collected through the Service; or resell or white-label the Service without our prior written consent.",
+      "You agree not to: use the Service for unlawful purposes; attempt to gain unauthorized access to the Service or to other accounts; interfere with or disrupt the Service’s operation; misuse participant or customer data collected through the Service; or resell or white-label the Service without our prior written consent.",
     ],
   },
   {
@@ -69,7 +69,7 @@ const sections: { heading: string; body: string[] }[] = [
   {
     heading: "10. Third-party services",
     body: [
-      "The Service may integrate with third-party payment processors, email and SMS providers, and other tools. Your use of those integrations may also be subject to the relevant third party's own terms.",
+      "The Service may integrate with third-party payment processors, email and SMS providers, and other tools. Your use of those integrations may also be subject to the relevant third party’s own terms.",
     ],
   },
   {
@@ -130,7 +130,7 @@ export default function TermsPage() {
         <h1 className="font-display text-3xl font-bold text-navy md:text-4xl">Terms of Service</h1>
         <p className="mt-2 text-sm text-muted">Last updated: July 2026</p>
         <p className="mt-4 rounded-xl border border-warning/30 bg-warning/10 p-4 text-sm text-ink">
-          These terms are written to reflect AquaRosters&apos; actual subscription plans and business
+          These terms are written to reflect AquaRosters’ actual subscription plans and business
           model during our design partner and early access phase. They should still be reviewed by
           qualified legal counsel before general availability.
         </p>

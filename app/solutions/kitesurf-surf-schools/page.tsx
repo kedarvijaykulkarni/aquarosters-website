@@ -45,7 +45,7 @@ export default function KitesurfSurfSchoolsPage() {
           <SectionHeader
             align="left"
             title="The weather-dependent scheduling challenge"
-            subheadline="Wind and tide don't wait for a spreadsheet to be updated. Every condition change ripples through instructor assignments, participant lists, and customer notifications."
+            subheadline="Wind and tide don’t wait for a spreadsheet to be updated. Every condition change ripples through instructor assignments, participant lists, and customer notifications."
           />
         </div>
 

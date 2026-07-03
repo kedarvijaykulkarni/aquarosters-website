@@ -59,7 +59,7 @@ export function ProductDashboardMockup() {
       <div className="flex-1 bg-sand">
         <div className="flex items-center justify-between border-b border-border bg-white px-4 py-3 sm:px-6">
           <div className="flex items-center gap-3">
-            <p className="font-display text-sm font-bold text-navy sm:text-base">Today&apos;s Operations</p>
+            <p className="font-display text-sm font-bold text-navy sm:text-base">Today’s Operations</p>
             <span className="hidden items-center gap-1 rounded-lg bg-sky px-2.5 py-1 text-xs text-ocean sm:flex">
               <Icon name="calendar" className="w-3.5 h-3.5" /> Thu, Oct 22
               <Icon name="chevron-down" className="w-3.5 h-3.5" />

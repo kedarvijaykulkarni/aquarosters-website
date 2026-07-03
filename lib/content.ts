@@ -176,7 +176,7 @@ export const featureModules: FeatureModule[] = [
     subheadline:
       "Direct online booking connected to the same availability your staff sees in POS and the live agenda.",
     problem:
-      "Booking widgets that don't share availability with the front desk create double-bookings and manual reconciliation.",
+      "Booking widgets that don’t share availability with the front desk create double-bookings and manual reconciliation.",
     howItWorks: [
       "Public booking pages backed by live session availability.",
       "Shared inventory between online booking, POS, and the agenda.",
@@ -248,13 +248,13 @@ export const featureModules: FeatureModule[] = [
     slug: "gear-rentals",
     icon: "package",
     title: "Gear & Rentals",
-    eyebrow: "Know what's available",
+    eyebrow: "Know what’s available",
     oneLiner: "Track gear units, rentals, maintenance, and trip assignments.",
     h1: "Know what gear is available, rented, blocked, or assigned to a trip.",
     subheadline:
       "Track individual gear units, rental blocks, maintenance checks, and trip assignments.",
     problem:
-      "When gear availability lives in someone's memory, double-booked equipment and last-minute scrambles are routine.",
+      "When gear availability lives in someone’s memory, double-booked equipment and last-minute scrambles are routine.",
     howItWorks: [
       "Individual gear units tracked, not just categories.",
       "Rental agenda shared with the live schedule.",
@@ -306,13 +306,13 @@ export const featureModules: FeatureModule[] = [
     subheadline:
       "Send booking confirmations, reminders, cancellations, payment receipts, and schedule updates by email or SMS.",
     problem:
-      "WhatsApp works until a message gets missed, buried, or sent to the wrong group — and there's no record of what was actually sent.",
+      "WhatsApp works until a message gets missed, buried, or sent to the wrong group — and there’s no record of what was actually sent.",
     howItWorks: [
       "Automatic booking confirmations and reminders.",
       "Cancellation and reschedule notices tied to the session.",
       "Payment receipts sent on confirmation.",
       "Email and SMS templates per notification type.",
-      "Failure logging when a message doesn't go through.",
+      "Failure logging when a message doesn’t go through.",
     ],
     benefits: [
       "Fewer missed updates",
@@ -328,11 +328,11 @@ export const featureModules: FeatureModule[] = [
     title: "Reports & Dashboard",
     eyebrow: "See the business, live",
     oneLiner: "View revenue, sessions, participants, register status, and alerts.",
-    h1: "See today's sessions, revenue, bookings, register status, and alerts.",
+    h1: "See today’s sessions, revenue, bookings, register status, and alerts.",
     subheadline:
       "Give managers live operational and financial visibility without manual spreadsheet reports.",
     problem:
-      "Spreadsheet reports tell you what happened last week — by the time they're built, the business has already moved on.",
+      "Spreadsheet reports tell you what happened last week — by the time they’re built, the business has already moved on.",
     howItWorks: [
       "Live dashboard metrics for sessions and bookings.",
       "Revenue and outstanding balance visibility.",
@@ -358,7 +358,7 @@ export const featureModules: FeatureModule[] = [
     subheadline:
       "Keep a searchable history of operational changes across sessions, bookings, payments, staff, and settings.",
     problem:
-      "When a booking or price looks wrong after the fact, there's rarely a reliable record of who changed it or when.",
+      "When a booking or price looks wrong after the fact, there’s rarely a reliable record of who changed it or when.",
     howItWorks: [
       "Every mutation logged automatically, not opt-in.",
       "Staff accountability tied to each change.",
@@ -538,7 +538,7 @@ export const pricingFaq = [
   },
   {
     question: "Can I join as a design partner?",
-    answer: "Yes — we're currently accepting design partners. Apply on the Design Partners page.",
+    answer: "Yes — we’re currently accepting design partners. Apply on the Design Partners page.",
   },
 ];
 
@@ -603,8 +603,8 @@ export const blogPosts = [
     excerpt:
       "Booking a slot is the easy part. Running the boat, the gear, and the manifest afterward is where most tools stop helping.",
     body: [
-      "Most booking software is built to answer one question: is this time slot free? For a dive center, that's the smallest part of the job. Once a course or trip is booked, someone still has to assign an instructor, check certifications, allocate gear, build a manifest, and track a deposit through to a final balance.",
-      "That's the gap AquaRosters is built to close — treating the booking as the start of an operational workflow, not the end of one.",
+      "Most booking software is built to answer one question: is this time slot free? For a dive center, that’s the smallest part of the job. Once a course or trip is booked, someone still has to assign an instructor, check certifications, allocate gear, build a manifest, and track a deposit through to a final balance.",
+      "That’s the gap AquaRosters is built to close — treating the booking as the start of an operational workflow, not the end of one.",
     ],
   },
   {
@@ -621,7 +621,7 @@ export const blogPosts = [
     slug: "why-zero-percent-commission-matters-for-direct-bookings",
     title: "Why 0% commission matters for direct bookings",
     excerpt:
-      "Every booking you bring in yourself is a booking a commission-based platform shouldn't be taking a cut of.",
+      "Every booking you bring in yourself is a booking a commission-based platform shouldn’t be taking a cut of.",
     body: [
       "Marketplaces and OTAs earn their commission by bringing you new customers. When a returning customer books directly with you, that same commission structure just quietly reduces your margin.",
       "AquaRosters charges a simple monthly fee instead — so a direct booking stays a direct booking, at full value.",
@@ -631,20 +631,20 @@ export const blogPosts = [
     slug: "how-to-choose-software-for-activity-operations",
     title: "How to choose software for activity operations",
     excerpt:
-      "The right question isn't 'does it take bookings' — it's 'does it run the rest of my day too'.",
+      "The right question isn’t ‘does it take bookings’ — it’s ‘does it run the rest of my day too’.",
     body: [
       "Booking capability is table stakes at this point. The better question when evaluating software is what happens after the booking: staff assignment, gear tracking, trip manifests, payments, and reporting.",
-      "Operators who evaluate software against the full operational day, not just checkout, tend to end up with tools they don't outgrow in six months.",
+      "Operators who evaluate software against the full operational day, not just checkout, tend to end up with tools they don’t outgrow in six months.",
     ],
   },
   {
     slug: "the-hidden-cost-of-running-your-business-from-spreadsheets",
     title: "The hidden cost of running your business from spreadsheets",
     excerpt:
-      "Spreadsheets don't fail loudly. They fail quietly, one manual update at a time.",
+      "Spreadsheets don’t fail loudly. They fail quietly, one manual update at a time.",
     body: [
-      "Spreadsheets are flexible, familiar, and cheap — which is exactly why they're so common in activity operations. But every manual update is a chance for a stale row, a missed instructor conflict, or a gear double-booking to slip through.",
-      "The cost isn't one dramatic failure. It's the accumulated time spent reconciling by hand, every single day.",
+      "Spreadsheets are flexible, familiar, and cheap — which is exactly why they’re so common in activity operations. But every manual update is a chance for a stale row, a missed instructor conflict, or a gear double-booking to slip through.",
+      "The cost isn’t one dramatic failure. It’s the accumulated time spent reconciling by hand, every single day.",
     ],
   },
 ];
