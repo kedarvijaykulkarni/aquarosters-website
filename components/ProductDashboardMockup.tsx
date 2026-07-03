@@ -20,7 +20,7 @@ function SessionCard({
 }) {
   return (
     <div className={`rounded-xl border border-border bg-white p-3 shadow-card border-l-4 ${accent}`}>
-      <div className="flex items-start justify-between gap-2">
+      <div className="flex flex-wrap items-start justify-between gap-2">
         <p className="text-sm font-semibold text-navy">{title}</p>
         <span className="shrink-0 rounded bg-sky px-2 py-0.5 text-[11px] font-bold text-ocean">{badge}</span>
       </div>
@@ -87,7 +87,7 @@ export function ProductDashboardMockup() {
               title="Open Water Course"
               time="08:00 – 12:00"
               instructor="Mara D."
-              badge="6/8 participants"
+              badge="6/8 pax"
               accent="border-l-aqua"
               chips={[
                 { label: "Gear Ready", tone: "success" },
@@ -98,7 +98,7 @@ export function ProductDashboardMockup() {
               title="Discover Scuba"
               time="13:00 – 15:00"
               instructor="Iain P."
-              badge="3/6 participants"
+              badge="3/6 pax"
               accent="border-l-ocean"
               chips={[{ label: "Balance Due", tone: "warning" }]}
             />
@@ -110,7 +110,7 @@ export function ProductDashboardMockup() {
               title="Tuesday Reef Trip"
               time="09:00 – 13:00"
               instructor="Staff Assigned"
-              badge="12/12 participants"
+              badge="12/12 pax"
               accent="border-l-teal"
               chips={[
                 { label: "Trip Manifest", tone: "info" },
@@ -125,17 +125,17 @@ export function ProductDashboardMockup() {
               title="Kitesurf Private Lesson"
               time="14:00 – 16:00"
               instructor="Sofia R."
-              badge="1/1 participants"
+              badge="1/1 pax"
               accent="border-l-aqua"
-              chips={[{ label: "Instructor Conflict Check Passed", tone: "success" }]}
+              chips={[{ label: "No Conflicts", tone: "success" }]}
             />
           </div>
 
           <div className="flex flex-col gap-3 sm:col-span-3 lg:col-span-1">
             <div className="rounded-xl border border-border bg-white p-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-1">
                 <p className="text-[11px] font-bold uppercase tracking-wide text-muted">Tide &amp; Weather</p>
-                <StatusBadge label="Weather Available" tone="info" />
+                <StatusBadge label="Available" tone="info" />
               </div>
               <div className="mt-2 flex items-center gap-2">
                 <span className="text-sm font-semibold text-navy">Tide 11:20 AM</span>
