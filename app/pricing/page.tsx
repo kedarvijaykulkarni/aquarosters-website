@@ -10,7 +10,7 @@ import { pricingPlans, pricingMatrixRows, pricingFaq } from "@/lib/content";
 export const metadata: Metadata = {
   title: "AquaRosters Pricing — Simple Monthly Plans with 0% Commission",
   description:
-    "Simple AquaRosters pricing for dive centers and watersports schools. Starter €29, Grow €59, Scale €99. 0% commission on direct bookings.",
+    "Simple AquaRosters pricing for dive centers and watersports schools. Starter €49, Grow €89, Scale €149. 0% commission on direct bookings.",
 };
 
 export default function PricingPage() {

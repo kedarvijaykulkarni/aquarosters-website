@@ -36,7 +36,7 @@ const sections: { heading: string; body: string[] }[] = [
   {
     heading: "5. Subscription plans and pricing",
     body: [
-      "AquaRosters offers three monthly subscription plans — Starter (€29/month), Grow (€59/month), and Scale (€99/month) — each with 0% commission on direct bookings made through the platform.",
+      "AquaRosters offers three monthly subscription plans — Starter (€49/month), Grow (€89/month), and Scale (€149/month) — each with 0% commission on direct bookings made through the platform.",
       "Plans, features, and pricing may change with reasonable notice. Design partners may receive separate founder pricing or extended free access, as described on our Design Partners page.",
     ],
   },

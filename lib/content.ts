@@ -467,13 +467,13 @@ export type PricingPlan = {
 export const pricingPlans: PricingPlan[] = [
   {
     name: "Starter",
-    price: "€29/month",
+    price: "€49/month",
     audience: "For single instructors or small operators.",
     features: ["Core scheduling", "Online booking", "Basic POS", "0% commission"],
   },
   {
     name: "Grow",
-    price: "€59/month",
+    price: "€89/month",
     recommended: true,
     audience: "For growing schools with staff and gear.",
     features: [
@@ -487,7 +487,7 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     name: "Scale",
-    price: "€99/month",
+    price: "€149/month",
     audience: "For larger or multi-location operators.",
     features: [
       "Multi-location support",

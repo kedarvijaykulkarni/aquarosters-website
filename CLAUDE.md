@@ -20,6 +20,12 @@ AquaRosters is the live operations agenda for dive centers and watersports schoo
 
 (Canonical description lives in `brand.description` in `lib/content.ts` — update there, not just here, if it changes.)
 
+## Business Source of Truth
+
+Business facts used in marketing copy — pricing, market sizing, competitive positioning, claimed differentiators, safe/unsafe claims — must trace back to the Obsidian business-strategy vault at `D:\work\Bloowatch\aquarosters\Brian\AquaRosters\wiki\` (mirrored in the repo at `aquarosters/business-wiki/`), not be invented locally. Key pages there: `business-context.md` (product claims, market size, ICP), `competitors.md`, `pricing.md`, `goals.md`, `operations.md`. That vault's own `CLAUDE.md` documents its ingest/update workflow.
+
+This repo's `CLAUDE.md` still owns the **website-specific** rules below (naming, exact routes, safe/unsafe claim wording as currently published) — when a business fact changes in the vault, update it here too so the two don't drift, starting with "Pricing Rules" and "Safe Claims / Unsafe Claims" below.
+
 ## Current Tech Stack
 
 - **Next.js 16** (App Router, Turbopack build), **React 19**, **TypeScript 6**
@@ -181,14 +187,16 @@ Product mockup illustrations (`components/*Mockup.tsx` — `ProductDashboardMock
 ## Pricing Rules
 
 Correct pricing (`lib/content.ts` → `pricingPlans`):
-- Starter — €29/month
-- Grow — €59/month — Recommended
-- Scale — €99/month
+- Starter — €49/month
+- Grow — €89/month — Recommended
+- Scale — €149/month
 
 Do not use:
-- €49
+- €29 / €59 / €99 (superseded ladder)
 - €129
 - unsupported pricing
+
+Pricing is sourced from the business-strategy vault (see "Business Source of Truth" below) — do not change these numbers without checking `pricing.md` there first.
 
 ## Safe Claims / Unsafe Claims
 
@@ -262,7 +270,9 @@ npm run lint
 npm run build
 grep -R "AquaRoster" . --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out --exclude=package-lock.json
 grep -R "AuquaRosters" . --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out
-grep -R "€49" . --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out
+grep -R "€29" . --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out --exclude=CLAUDE.md
+grep -R "€59" . --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out --exclude=CLAUDE.md
+grep -R "€99" . --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out --exclude=CLAUDE.md
 grep -R "€129" . --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out
 grep -R "Trusted by 500" . --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out
 grep -R "postgresql://" . --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=out
